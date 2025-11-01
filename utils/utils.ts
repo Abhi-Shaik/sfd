@@ -13,9 +13,6 @@ export const { runWithAmplifyServerContext } = createServerRunner({
       maxAge: 60 * 60 * 24 * 7 // 7 days
     }
   }
-    cookies: {
-        httpOnly: true
-    }
 })
 
 export async function GetAuthCurrentUserServer() {
