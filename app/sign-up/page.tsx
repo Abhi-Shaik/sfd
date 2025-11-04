@@ -45,8 +45,8 @@ export default function SignUpPage() {
         },
       });
       setStep('confirm');
-    } catch (err: any) {
-      setError(err.message || 'Failed to sign up. Please try again.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to sign up. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -70,8 +70,8 @@ export default function SignUpPage() {
       });
       
       router.push('/');
-    } catch (err: any) {
-      setError(err.message || 'Failed to confirm. Please try again.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to confirm. Please try again.');
     } finally {
       setIsLoading(false);
     }
