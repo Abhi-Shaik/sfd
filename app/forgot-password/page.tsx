@@ -25,8 +25,8 @@ export default function ForgotPasswordPage() {
       await resetPassword({ username: email });
       setSuccess('Password reset code sent to your email!');
       setStep('confirm');
-    } catch (err: any) {
-      setError(err.message || 'Failed to send reset code. Please try again.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send reset code. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -57,8 +57,8 @@ export default function ForgotPasswordPage() {
       });
       setSuccess('Password reset successful! Redirecting to sign in...');
       setTimeout(() => router.push('/sign-in'), 2000);
-    } catch (err: any) {
-      setError(err.message || 'Failed to reset password. Please try again.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to reset password. Please try again.');
     } finally {
       setIsLoading(false);
     }

@@ -11,23 +11,23 @@ export default function CasesPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    checkUser();
-  }, []);
-
-  async function checkUser() {
-    try {
-      const currentUser = await getCurrentUser();
-      const attributes = await fetchUserAttributes();
-      setUser({
-        username: currentUser.username,
-        name: attributes.name || attributes.email || currentUser.username,
-      });
-    } catch {
-      router.push('/sign-in');
-    } finally {
-      setLoading(false);
+    async function checkUser() {
+      try {
+        const currentUser = await getCurrentUser();
+        const attributes = await fetchUserAttributes();
+        setUser({
+          username: currentUser.username,
+          name: attributes.name || attributes.email || currentUser.username,
+        });
+      } catch {
+        router.push('/sign-in');
+      } finally {
+        setLoading(false);
+      }
     }
-  }
+    
+    checkUser();
+  }, [router]);
 
   if (loading) {
     return (

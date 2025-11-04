@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Amplify artifacts
+    ".amplify/**",
+    "amplify_outputs.json",
   ]),
 ]);
 

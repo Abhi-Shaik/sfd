@@ -49,7 +49,10 @@ export default function Navbar({ user, onToggleSidebar }: NavbarProps) {
             </button>
 
             {/* Logo */}
-            <a href="/" className="flex ml-2 md:mr-24">
+            <button
+              onClick={() => router.push('/')}
+              className="flex ml-2 md:mr-24 cursor-pointer"
+            >
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
                 <svg
                   className="w-6 h-6 text-white"
@@ -68,7 +71,7 @@ export default function Navbar({ user, onToggleSidebar }: NavbarProps) {
               <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white ml-3">
                 SF Demo
               </span>
-            </a>
+            </button>
           </div>
 
           <div className="flex items-center gap-3">

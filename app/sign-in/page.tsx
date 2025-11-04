@@ -24,8 +24,8 @@ export default function SignInPage() {
         password: formData.password,
       });
       router.push('/');
-    } catch (err: any) {
-      setError(err.message || 'Failed to sign in. Please try again.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to sign in. Please try again.');
     } finally {
       setIsLoading(false);
     }
