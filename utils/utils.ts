@@ -11,6 +11,7 @@ export const { runWithAmplifyServerContext } = createServerRunner({
       domain: 'main.d2w33k3u7l8ohq.amplifyapp.com', // making cookies available to all subdomains
       sameSite: 'strict',
       maxAge: 60 * 60 * 24 * 7 // 7 days
+      // Note: httpOnly and secure are automatically set to true by Amplify for security
     }
   }
 })

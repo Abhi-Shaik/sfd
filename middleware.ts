@@ -20,9 +20,9 @@ export async function middleware(request: NextRequest) {
     if(authenticated) {
         return response
     }
-    return NextResponse.redirect(new URL('/signup', request.url))
+    return NextResponse.redirect(new URL('/sign-up', request.url))
 }
 
 export const config = {
-    matcher: ["/((?!api|_next/static|_next/image|favicon.ico|signup).*)"]
+    matcher: ["/((?!api|_next/static|_next/image|favicon.ico|sign-up|sign-in|forgot-password|$).*)"]
 }
